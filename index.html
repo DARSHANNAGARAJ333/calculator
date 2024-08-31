@@ -1,0 +1,309 @@
+<html>
+<head>
+	<title>SIMPLE CALCULATRO</title>
+	<link href="prosc.css" rel="stylesheet">
+</head>
+<body>
+	<script>
+	var i=1,xdo=0;
+function fune2(q3,q2,q,s)
+{
+  var s1="",s2="";
+  for(var x1=q3+1;x1<q;x1++)
+  s1+=s[x1];
+   for(var x2=q+1;x2<q2;x2++)
+   s2+=s[x2];
+	s1-=0;
+	s2-=0;
+	
+	switch(s[q])
+	{
+	   case '+':return s1+s2;
+	   case '-':return s1-s2;
+	   case 'X':return s1*s2;
+	   case '/':return s1/s2;
+	   case '%':return s1%s2;
+	}
+   
+}
+function fune()
+{
+  var s=document.getElementById("res").value;
+for(var q=0;s[q]!=null;q++)
+{
+  
+   if(s[q]=='%')
+	{
+		
+		var ress="",ress2="";
+		for(var q3=q-1;(s[q3]!='+'&&s[q3]!='-'&&s[q3]!='*'&&s[q3]!='/'&&s[q3]!='%')&&q3>=0;q3--);
+			for(var q2=q+1;(s[q2]!='+'&&s[q2]!='-'&&s[q2]!='*'&&s[q2]!='/'&&s[q2]!='%')&&s[q2]!=null;q2++);
+		ress=fune2(q3,q2,q,s);
+		for(var m3=0;m3<=q3;m3++)
+		ress2+=s[m3];
+		ress2+=ress;
+		for(var m3=q2;s[m3]!=null;m3++)
+		ress2+=s[m3];   
+		s=ress2;
+		q=0;
+	}
+}
+
+for(var q=0;s[q]!=null;q++)
+{
+  
+   if(s[q]=='/')
+	{var xy=q+1;
+	  if(s[q+1]=='-')
+	  xy=q+2;	
+		var ress="",ress2="";
+		for(var q3=q-1;(s[q3]!='+'&&s[q3]!='-'&&s[q3]!='*'&&s[q3]!='/'&&s[q3]!='%')&&q3>=0;q3--);
+			for(var q2=xy;(s[q2]!='+'&&s[q2]!='-'&&s[q2]!='*'&&s[q2]!='/'&&s[q2]!='%')&&s[q2]!=null;q2++);
+		ress=fune2(q3,q2,q,s);
+		for(var m3=0;m3<=q3;m3++)
+		ress2+=s[m3];
+		ress2+=ress;
+		for(var m3=q2;s[m3]!=null;m3++)
+		ress2+=s[m3];
+		s=ress2;
+
+		q=0;
+	}
+}
+
+for(var q=0;s[q]!=null;q++)
+{
+  
+   if(s[q]=='X')
+	{var xy=q+1;
+	  if(s[q+1]=='-')
+	  xy=q+2;	
+	
+		
+		var ress="",ress2="";
+		for(var q3=q-1;(s[q3]!='+'&&s[q3]!='-'&&s[q3]!='*'&&s[q3]!='/'&&s[q3]!='%')&&q3>=0;q3--);
+			for(var q2=xy;(s[q2]!='+'&&s[q2]!='-'&&s[q2]!='*'&&s[q2]!='/'&&s[q2]!='%')&&s[q2]!=null;q2++);
+		ress=fune2(q3,q2,q,s);
+		for(var m3=0;m3<=q3;m3++)
+		ress2+=s[m3];
+		ress2+=ress;
+		for(var m3=q2;s[m3]!=null;m3++)
+		ress2+=s[m3];
+		s=ress2;
+		q=0;
+	}
+}
+
+for(var q=0;s[q]!=null;q++)
+{
+  
+   if(s[q]=='+')
+	{
+		
+		var ress="",ress2="";
+		for(var q3=q-1;(s[q3]!='+'&&s[q3]!='-'&&s[q3]!='*'&&s[q3]!='/'&&s[q3]!='%')&&q3>=0;q3--);
+			for(var q2=q+1;(s[q2]!='+'&&s[q2]!='-'&&s[q2]!='*'&&s[q2]!='/'&&s[q2]!='%')&&s[q2]!=null;q2++);
+		ress=fune2(q3,q2,q,s);
+		for(var m3=0;m3<=q3;m3++)
+		ress2+=s[m3];
+		ress2+=ress;
+		for(var m3=q2;s[m3]!=null;m3++)
+		ress2+=s[m3];
+		s=ress2;
+		q=0;
+	}
+}
+
+for(var q=0;s[q]!=null;q++)
+{
+  
+   if(s[q]=='-')
+	{
+		
+		var ress="",ress2="";
+		for(var q3=q-1;(s[q3]!='+'&&s[q3]!='-'&&s[q3]!='*'&&s[q3]!='/'&&s[q3]!='%')&&q3>=0;q3--);
+			for(var q2=q+1;(s[q2]!='+'&&s[q2]!='-'&&s[q2]!='*'&&s[q2]!='/'&&s[q2]!='%')&&s[q2]!=null;q2++);
+		ress=fune2(q3,q2,q,s);
+		for(var m3=0;m3<=q3;m3++)
+		ress2+=s[m3];
+		ress2+=ress;
+		for(var m3=q2;s[m3]!=null;m3++)
+		ress2+=s[m3];
+		s=ress2;
+		q=0;
+	}
+}
+        document.getElementById("res").value=s;
+	i=0;
+	for(db=0;s[db]!=null;db++)
+	{
+         i++;
+	 if(s[db]=='.')
+		xdo=1;
+	}
+	}
+
+	function fun1(x)
+	{
+		var xx=document.getElementById("res").value[i-2];
+		
+		if(document.getElementById("res").value=="0.")
+		document.getElementById("res").value+=x;
+		else
+		if(document.getElementById("res").value==0)
+		document.getElementById("res").value=x;
+		else
+		if((xx=='+'||xx=='-'||xx=='X'||xx=='%'||xx=='÷')&&document.getElementById("res").value[i-1]==0)
+		{
+		  
+		    
+			
+			  	var st=document.getElementById("res").value;
+		  		var st2="";
+                  		for(var c=0;c<i-1;c++)
+		  		{
+				st2+=st[c];
+				  }	
+				document.getElementById("res").value=st2+x;
+			
+		}
+		else
+		{
+		document.getElementById("res").value+=x;
+		i++;
+		}
+	}
+ 
+       	function fun2(n)
+	{
+		var x=document.getElementById("res").value[i-1];
+		if(x!='+'&&x!='-'&&x!='X'&&x!='%'&&x!='÷')
+		{
+ 		document.getElementById("res").value+=n;
+		i++;
+		}
+		else
+		{
+		  var st=document.getElementById("res").value;
+		  var st2="";
+                  for(var c=0;c<i-1;c++)
+		  {
+			st2+=st[c];
+		  }	
+			document.getElementById("res").value=st2+n;	
+		}
+	     xdo=0;
+		
+	}
+	
+	function ac()
+	{
+		document.getElementById("res").value=0;
+		i=1;
+		xdo=0;
+	}
+
+	function funo()
+	{
+		var x=document.getElementById("res").value[i-2];
+             if(((x!='+'&&x!='-'&&x!='X'&&x!='%'&&x!='÷')||(document.getElementById("res").value[i-1]!=0))&&document.getElementById("res").value!=0)
+		{
+			document.getElementById("res").value+=0;
+			i++;
+		}
+	}
+
+	function deli()
+	{
+	  var st=document.getElementById("res").value;
+		  var st2="";
+			for(var c=0;c<i-1;c++)
+		  {
+			st2+=st[c];
+		  }	
+ 		if(st2=="")
+		{
+		st2=0;
+		}
+		
+		if(st[i-1]=='.')
+		xdo=0;
+			document.getElementById("res").value=st2;	
+		i=i-1;
+		if(st2=="")
+		i=1;
+		
+	}
+
+	function dott()
+	{
+	   if(xdo==0)
+		{
+            	 	 var x=document.getElementById("res").value[i-1];
+			if(x!='+'&&x!='-'&&x!='X'&&x!='%'&&x!='÷')
+			{
+		 	 document.getElementById("res").value+='.';
+		          
+			}
+			else
+			{
+			document.getElementById("res").value+='0';
+			i++;
+			document.getElementById("res").value+='.';
+			}
+			xdo=1;
+			i++;
+		}
+	}
+
+
+	function equal()
+	{
+		document.write(i);
+		document.write("<br>hi");
+
+	}
+	</script>
+
+	<table class="tab1">
+		<caption style="color:FD841F;"><h3>SIMPLE CALCULATOR</h3></caption>
+		<tr>
+			<td colspan="4"><div>asdf </div><td>
+		</tr>
+		<tr>
+			<td colspan="4"><input type="text" id="res" value="0" class="input"></td>
+		</tr>
+			<tr>
+				<td><button type="button" class="butt" onclick="ac()">AC</button></td>
+				<td><button type="class" class="butt" onclick="deli()">⌫</button></td>
+				<td><button type="button" class="butt" onclick="fun2('%')">%</button></td>
+				<td><button type="button" class="butt" onclick="fun2('/')">/</button></td>
+			</tr>
+			<tr>
+				<td><button type="button" class="butt" onclick="fun1(7)">7</button></td>
+				<td><button type="button" class="butt" onclick="fun1(8)">8</button></td>
+				<td><button type="button" class="butt" onclick="fun1(9)">9</button></td>
+				<td><button type="button" class="butt" onclick="fun2('X')">X</button></td>
+			</tr>
+			<tr>
+				<td><button type="button" class="butt" onclick="fun1(4)">4</button></td>
+				<td><button type="button" class="butt" onclick="fun1(5)">5</button></td>
+				<td><button type="button" class="butt" onclick="fun1(6)">6</button></td>
+				<td><button type="button" class="butt" onclick="fun2('-')">-</button></td>
+			</tr>
+			<tr>
+				<td><button type="button" class="butt" onclick="fun1(1)">1</button></td>
+				<td><button type="button" class="butt" onclick="fun1(2)">2</button></td>
+				<td><button type="button" class="butt" onclick="fun1(3)">3</button></td>
+				<td><button type="button" class="butt" onclick="fun2('+')">+</button></td>
+			</tr>
+
+			<tr>
+				<td><button type="button" class="butt" onclick="">C</button></td>
+				<td><button type="button" class="butt" onclick="funo()">0</button></td>
+				<td><button type="button" class="butt" onclick="dott()">.</button></td>
+				<td><button type="button" class="butt" onclick="fune()">=</button></td>
+			</tr>
+	</table>
+</body>
+</html>

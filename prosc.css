@@ -1,0 +1,45 @@
+.tab1
+{
+	background-color:black;
+	height:60%;
+	width:20%;
+	border:1px solid white;
+	position:absolute;
+	left:40%;
+	top:20%;
+	
+}
+body
+{
+ background:black;
+}
+.input
+{
+ font-size:20px;
+ height:30px;
+ background-color:black;
+  color:white;
+  width:100%;
+
+}
+
+.butt
+{
+  height:100%;
+ width:100%;
+ background-color:black;
+ color:FD841F;
+ font-size:150%;
+}
+
+button:active
+{
+  background-color:white;
+  color:black;
+}
+
+button:hover
+{
+  border:2px solid;
+  border-color:FD841F;
+}
